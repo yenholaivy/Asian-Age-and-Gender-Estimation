@@ -15,8 +15,9 @@ def text_to_pd(file_path):
     '''
 
     data = pd.read_csv(file_path,header=None)
-    data['age'] = data[0].apply(lambda x: int(str(x)[2:4]))
-    data['gender'] = data[0].apply(lambda x: 0 if str(x)[5:8] == '112' else 1)
+    data['age'] = data[0].apply(lambda x: int(str(x)[2:4])) # Extract age
+    data['gender'] = data[0].apply(lambda x: 0 if str(x)[5:8] == '112' else 1) # Extract gender, 1 = Male, 2 = Female
+    data = data[data['age'] < 41] # Only include age < 41
     return data
 
 def dist_by_gender(data):
@@ -47,13 +48,6 @@ def dist_by_gender(data):
     ax.legend()
     fig.tight_layout()
     plt.show()
-
-
-if __name__ == "__main__":
-    file_path = 'AFAD-Lite.txt' # Use the provided text file from AFAD
-    data = text_to_pd(file_path)
-    dist_by_gender(data)
-
 
     
 
