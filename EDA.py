@@ -39,8 +39,13 @@ def dist_by_gender(data):
             male_dist = gender_data.age.value_counts().sort_index()
 
     fig, ax = plt.subplots(figsize = (12, 5))
+
     ax.bar(male_dist.index-0.15, male_dist.values, width = 0.3,color= 'steelblue', label = 'Male')
     ax.bar(female_dist.index+0.15, female_dist.values, width = 0.3, color= 'firebrick', label = 'Female')
+
+    total_mean = round(data.age.mean(),2)
+    ax.axvline(x = total_mean, c ='orange', lw = 3, linestyle = '--', label = 'Average Age')
+    
     ax.set_xticks(female_dist.index)
     ax.set_xlabel('Age')
     ax.set_ylabel('Number of Images')
