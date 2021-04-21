@@ -1,12 +1,13 @@
 import pandas as pd
 import numpy as np
 from sklearn.metrics import mean_absolute_error, accuracy_score
+from sklearn.dummy import DummyClassifier
 from sklearn.model_selection import train_test_split
 from EDA import text_to_pd, dist_by_gender
 
 def gender_baseline_model(train, test):
     '''
-    Gender baseline model. Always predict male.
+    Gender baseline model. Use sklearn DummyClassifier.
 
     Parameter:
         train, test
@@ -14,8 +15,13 @@ def gender_baseline_model(train, test):
     Return:
         gender_baseline
     '''
+    dummy_clf = DummyClassifier(strategy='stratified')
+    X_train_gender = train.drop(columns = 'gender')
+    y_train_gender = train.gender
+    dummy_clf.fit(X_train_gender, y_train_gender)
+    X_test_gender = test.drop(columns = 'gender')
     y_true_gender = test.gender.to_numpy()
-    y_pred_gender = np.ones(y_true_gender.shape)
+    y_pred_gender = dummy_clf.predict(X_test_gender)
     gender_baseline = round(accuracy_score(y_true_gender, y_pred_gender),4)
     print(f'Accuracy for the baseline model for gender is : {gender_baseline}')
     return gender_baseline
