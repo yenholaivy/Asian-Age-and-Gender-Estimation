@@ -40,7 +40,7 @@ def age_baseline_model(train, test):
 
 
 if __name__ == '__main__':
-    file_path = 'AFAD-Lite.txt' # Use the provided text file from AFAD
+    file_path = 'AFAD-Full.txt' # Use the provided text file from AFAD
     data = text_to_pd(file_path)
     train, test = train_test_split(data, test_size=0.2)
     gender_baseline = gender_baseline_model(train, test)
