@@ -1,16 +1,16 @@
 # Detect Gender and Age of Asian Individuals with Deep Learning
 
 ## Table of Contents
-[Motivation](#motivation)
-[Data](#data)
-[Modeling](#modeling)
-- [Gender Detection](#gender-detection)
-- [Age Estimation](#age-estimation)
-- [Transfer Learning](#transer-learning)
-[Conclusion and Next Steps](#conclusion-and-next-steps)
-[Final Notes](#final-notes)
-[Tools](#tools)
-[Citation](#citation)
+- [Motivation](#motivation)
+- [Data](#data)
+- [Modeling](#modeling)
+    - [Gender Detection](#gender-detection)
+    - [Age Estimation](#age-estimation)
+    - [Transfer Learning](#transer-learning)
+- [Conclusion and Next Steps](#conclusion-and-next-steps)
+- [Final Notes](#final-notes)
+- [Tools](#tools)
+- [Citation](#citation)
 
 
 ## Motivation
