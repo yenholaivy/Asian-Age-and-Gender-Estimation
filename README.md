@@ -3,7 +3,7 @@
 ## Motivation
 Is 'Asian Don't Raisin' a real thing? There are so many Asian celebrities in their 40's looking like they are in their 20's. Even myself, as an American of Taiwanese descent, I remember telling people I was a sophomore back in college, and they thought I meant high school the whole conversation. It seems to be a common thing that people can't guess Asian people's ages very accurately. That made me wonder if machines can do it better than human eyes; are there some facial features that we as human can't see easily but machines can pick up? I decided to build a model using Convolutional Neural Network (CNN) to detect the gender and age of Asian individuals!
 
-![alt img](https://github.com/yenholaivy/Asian-Age-and-Gender-Estimation/blob/main/img/asian_female.png)
+![alt img](https://github.com/yenholaivy/Asian-Age-and-Gender-Estimation/blob/main/img/asian_females.png)
 
 ## Data
 The dataset used in this study is downloaded from [The Asian Face Age Dataset (AFAD)](https://afad-dataset.github.io/). The dataset includes more than 160,000 images with the age and gender well-labeled. There are 100,000 images of male and 60,000 images of female, and the age ranging from 15 to 41 with the average to be 25.6. The dataset has the most images from age 19 to 25, as the pictures were collected from a social media site. 
