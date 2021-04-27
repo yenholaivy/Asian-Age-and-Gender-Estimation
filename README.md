@@ -12,7 +12,7 @@ The dataset used in this study is downloaded from [The Asian Face Age Dataset (A
   
 ## Modeling
 ### Gender Detection
-Before I created the age estimator model, I wanted to start with something easier -- to build a gender detection model (see this notebook). I used sklearn DummyClassifier as my baseline, and got a 53% accuracy. Then, I built a CNN classifier with two convolutional layers and two fully-connected layers. 
+Before I created the age estimator model, I wanted to start with something easier -- to build a gender detection model (see [simple_cnn_gender_detection.ipynb](https://github.com/yenholaivy/Asian-Age-and-Gender-Estimation/blob/main/simple_cnn_gender_detection.ipynb)). I used sklearn DummyClassifier as my baseline, and got a 53% accuracy. Then, I built a CNN classifier with two convolutional layers and two fully-connected layers. 
 
 ![alt img](https://github.com/yenholaivy/Asian-Age-and-Gender-Estimation/blob/main/img/simple_cnn_struc.png)
 
@@ -29,7 +29,7 @@ I trained the model for 50 epochs and got a 93% accuracy with male precision 96%
   
 
 ### Age Estimation
-Next, I moved on to the age estimator model (see this notebook). My baseline is to always predict the average age 25.6 years, and it gives mean absolute error (MAE) of 5.2. My CNN model for age estimation has the same structure as the gender model, except the last layer has 'linear' as the activation function since this is a regression problem. I trained the model for 50 epochs and got a MAE of 4.1, which is a 20% improvement compared to the baseline. 
+Next, I moved on to the age estimator model (see [simple_cnn_age_estimator.ipynb](https://github.com/yenholaivy/Asian-Age-and-Gender-Estimation/blob/main/simple_cnn_age_estimator.ipynb)). My baseline is to always predict the average age 25.6 years, and it gives mean absolute error (MAE) of 5.2. My CNN model for age estimation has the same structure as the gender model, except the last layer has 'linear' as the activation function since this is a regression problem. I trained the model for 50 epochs and got a MAE of 4.1, which is a 20% improvement compared to the baseline. 
 
 |  Model | MAE | 
 | --- | --- |
@@ -44,7 +44,7 @@ When looking at the average MAE per age, I saw that the model was performing muc
 
 
 #### Apply Transer Learning
-To imporove the results, I decided to apply transfer learning (see this notebook). The pre-trained model I applied was VGGFace, which was a model already fine-tuned on faces (see article for details). This is a massive model with 38 layers and 145 millions parameters. Due to hardward limits of my EC2 instance, I removed the last few convolutional layers that had over 4000 filters, and added a few fully-connected layers.
+To imporove the results, I decided to apply transfer learning (see [transfer_learning.ipynb](https://github.com/yenholaivy/Asian-Age-and-Gender-Estimation/blob/main/transfer_learning.ipynb)). The pre-trained model I applied was VGGFace, which was a model already fine-tuned on faces (see [article](https://sefiks.com/2018/08/06/deep-face-recognition-with-keras/) for details). This is a massive model with 38 layers and 145 millions parameters. Due to hardward limits of my EC2 instance, I removed the last few convolutional layers that had over 4000 filters, and added a few fully-connected layers.
 
 ![alt img](https://github.com/yenholaivy/Asian-Age-and-Gender-Estimation/blob/main/img/transfer_learning.png)
 
@@ -68,10 +68,9 @@ When looking at the average MAE per age, we can still see that both models were 
   
 ![alt img](https://github.com/yenholaivy/Asian-Age-and-Gender-Estimation/blob/main/img/vgg_m_vs_f.png)
 
-### Conclusion and Next Steps
-In this study, I was able to use deep learning to create a gender detection model with 93% accuracy (40% improvement from the baseline) and two age estimation models for each gender with MAE 3.6 (30% improvement for male, 25% improvement for female). 
-As for next steps, I would like to train the age estimation models for more epochs. Even though I was training the model on a g3 EC2 instance (3 GPUs, 16 CPUs and 100 RAM), it still took about 4 hours to finish one epoch.
-
+## Conclusion and Next Steps
+In this study, I was able to use deep learning to create a gender detection model with 93% accuracy (40% improvement from the baseline) and two age estimation models for each gender with a MAE of 3.6 (30% improvement for male, 25% improvement for female). 
+As for next steps, I would like to train the age estimation models for more epochs. Even though I was training the model on a g3 EC2 instance (3 GPUs, 16 CPUs and 100 RAM), it still took about 4 hours to finish one epoch. Since the test MAEs were still decreasing (see above images), I believe the models would continue to improve with more epochs.
 
 ## Final Notes
 I wasn't able to upload the weights for my transfer learning models due to GitHub file size limit. If you are interested in using my pre-trained model, please feel free to contact me at yenholai.ivy@gmail.com.
