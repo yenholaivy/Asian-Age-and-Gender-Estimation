@@ -75,7 +75,7 @@ When looking at the average MAE per age, we can still see that both models were 
 
 ## Conclusion and Next Steps
 In this study, I was able to use deep learning to create a gender detection model with 93% accuracy (40% improvement from the baseline) and two age estimation models for each gender with a MAE of 3.6 (30% improvement for male, 25% improvement for female). 
-As for next steps, I would like to train the age estimation models for more epochs. Even though I was training the model on a g3 EC2 instance (3 GPUs, 16 CPUs and 100 RAM), it still took about 4 hours to finish one epoch. Since the test MAEs were still decreasing (see above images), I believe the models would continue to improve with more epochs.
+As for next steps, I would like to train the male age estimation model for more epochs. Even though I was training the model on a g3 EC2 instance (3 GPUs, 16 CPUs and 100 RAM), it still took about 4.5 hours to finish one epoch. Since the test MAE was still decreasing (see above image), I believe the model would continue to improve with more epochs.
 
 ## Final Notes
 I wasn't able to upload the weights for my transfer learning models due to GitHub file size limit. If you are interested in using my pre-trained model, please feel free to contact me at yenholai.ivy@gmail.com.
