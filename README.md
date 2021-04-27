@@ -44,14 +44,14 @@ On top of that, I decided to split up the genders into male and female and train
  |  Model | MAE | 
 | --- | --- |
 | Baseline | 5.1 | 
-| Simple Male CNN | 3.6 |
+| Male CNN | 3.6 |
   
 <epoch image>
   
 |  Model | MAE | 
 | --- | --- |
 | Baseline | 4.8 | 
-| Simple Female CNN | 3.6 | 
+| Female CNN | 3.6 | 
 
 When looking at the average MAE per age, we can still see that both models were performing better for age 20 to 29. Interestingly, the female model performed better than the male model before age of 23, and the male model out-performed the female model after that. 
   
@@ -69,7 +69,7 @@ I wasn't able to upload the weights for my transfer learning models due to GitHu
 - Python: Tensorflow, Scikit-Learn, Numpy, Pandas, Matplotlib
 
 ## Citation
-Ordinal Regression With Multiple Output CNN for Age Estimation
+- Ordinal Regression With Multiple Output CNN for Age Estimation
 Zhenxing Niu, Mo Zhou, Le Wang, Xinbo Gao, Gang Hua; Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2016, pp. 4920-4928
 
 
