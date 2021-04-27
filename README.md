@@ -1,5 +1,17 @@
 # Detect Gender and Age of Asian Individuals with Deep Learning
 
+## Table of Contents
+1. [Motivation](#motivation)
+2. [Data](#data)
+3. [Modeling](#modeling)
+- [Gender Detection](#gender-detection)
+- [Age Estimation](#age-estimation)
+- [Transfer Learning](#transer-learning)
+4. [Conclusion and Next Steps](#conclusion-and-next-steps)
+5. [Final Notes](#final-notes)
+6. [Tools](#tools)
+7. [Citation](#citation)
+
 ## Motivation
 Is 'Asian Don't Raisin' a real thing? There are so many Asian celebrities in their 40's looking like they are in their 20's. Even myself, as an American of Taiwanese descent, I remember telling people I was a sophomore back in college, and they thought I meant high school the whole conversation. It seems to be a common thing that people can't guess Asian people's ages very accurately. That made me wonder if machines can do it better than human eyes; are there some facial features that we as human can't see easily but machines can pick up? I decided to build a model using Convolutional Neural Network (CNN) to detect the gender and age of Asian individuals!
 
@@ -48,7 +60,7 @@ When looking at the average MAE per age, I saw that the model was performing muc
 ![alt img](https://github.com/yenholaivy/Asian-Age-and-Gender-Estimation/blob/main/img/simple_cnn_mae.png)
 
 
-#### Apply Transer Learning
+#### Transer Learning
 To imporove the results, I decided to apply transfer learning (see [transfer_learning.ipynb](https://github.com/yenholaivy/Asian-Age-and-Gender-Estimation/blob/main/transfer_learning.ipynb)). The pre-trained model I applied was VGGFace, which was a model already fine-tuned on faces (see [article](https://sefiks.com/2018/08/06/deep-face-recognition-with-keras/) for details). This is a massive model with 38 layers and 145 millions parameters. Due to hardward limits of my EC2 instance, I removed the last few convolutional layers that had over 4000 filters, and added a few fully-connected layers.
 
 ![alt img](https://github.com/yenholaivy/Asian-Age-and-Gender-Estimation/blob/main/img/transfer_learning.png)
