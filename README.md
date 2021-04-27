@@ -25,6 +25,11 @@ I trained the model for 50 epochs and got a 93% accuracy with male precision 96%
 
 ![alt img](https://github.com/yenholaivy/Asian-Age-and-Gender-Estimation/blob/main/img/simple_cnn_gender.png)
 
+|  Gender | Precision | 
+| --- | --- |
+| Male | 96% | 
+| Female | 89% |
+
 ![alt img](https://github.com/yenholaivy/Asian-Age-and-Gender-Estimation/blob/main/img/cm_gender.png)
   
 
