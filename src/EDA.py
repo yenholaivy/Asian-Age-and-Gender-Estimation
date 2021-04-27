@@ -18,6 +18,16 @@ def text_to_pd(file_path):
     data['age'] = data[0].apply(lambda x: int(str(x)[2:4])) # Extract age
     data['gender'] = data[0].apply(lambda x: 0 if str(x)[5:8] == '112' else 1) # Extract gender, 1 = Male, 2 = Female
     data = data[data['age'] < 41] # Only include age < 41
+
+    age_group = {15: '15-17',  16: '15-17', 17: '15-17', 18: '18-20', 19: '18-20', 20: '18-20',
+     21: '21-23', 22: '21-23', 23: '21-23', 24: '24-26', 25: '24-26', 26: '24-26',
+     27: '27-29', 28: '27-29', 29: '27-29', 30: '30-32', 31: '30-32', 32: '30-32',
+     33: '33-35', 34: '33-35', 35: '33-35', 36: '36-40', 37: '36-40', 38: '36-40',
+     39: '36-40', 40: '36-40'}
+
+    data['age_group'] = data['age']
+    data.replace({'age_group': age_group}, inplace = True)
+
     return data
 
 def dist_by_gender(data):
