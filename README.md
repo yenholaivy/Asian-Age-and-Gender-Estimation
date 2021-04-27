@@ -22,6 +22,8 @@ Is 'Asian Don't Raisin' a real thing? There are so many Asian celebrities in the
 ## Data
 The dataset used in this study is downloaded from [The Asian Face Age Dataset (AFAD)](https://afad-dataset.github.io/). The dataset includes more than 160,000 images with the age and gender well-labeled. There are 100,000 images of male and 60,000 images of female, and the age ranging from 15 to 41 with the average to be 25.6. The dataset has the most images from age 19 to 25, as the pictures were collected from a social media site. 
 
+![alt img](https://github.com/yenholaivy/Asian-Age-and-Gender-Estimation/blob/main/img/afad_samples.png)
+
 ![alt img](https://github.com/yenholaivy/Asian-Age-and-Gender-Estimation/blob/main/img/dist_age_gender.png)
   
   
@@ -46,6 +48,10 @@ I trained the model for 50 epochs and got a 93% accuracy with male precision 96%
 | Female | 89% |
 
 ![alt img](https://github.com/yenholaivy/Asian-Age-and-Gender-Estimation/blob/main/img/cm_gender.png)
+
+Here are some examples of a male being predicted as female, and vice versa.
+
+![alt img](https://github.com/yenholaivy/Asian-Age-and-Gender-Estimation/blob/main/img/wrong_predictions.png)
   
 
 ### Age Estimation
