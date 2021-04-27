@@ -2,26 +2,32 @@
 
 ## Motivation
 Is 'Asian Don't Raisin' a real thing? There are so many Asian celebrities in their 40's looking like they are in their 20's. Even myself, as an American of Taiwanese descent, I remember telling people I was a sophomore back in college, and they thought I meant high school the whole conversation. It seems to be a common thing that people can't guess Asian people's ages very accurately. That made me wonder if machines can do it better than human eyes; are there some facial features that we as human can't see easily but machines can pick up? I decided to build a model using Convolutional Neural Network (CNN) to detect the gender and age of Asian individuals!
-<insert images>
+
+![alt img](https://github.com/yenholaivy/Asian-Age-and-Gender-Estimation/blob/main/img/asian_female.png)
 
 ## Data
 The dataset used in this study is downloaded from [The Asian Face Age Dataset (AFAD)](https://afad-dataset.github.io/). The dataset includes more than 160,000 images with the age and gender well-labeled. There are 100,000 images of male and 60,000 images of female, and the age ranging from 15 to 41 with the average to be 25.6. The dataset has the most images from age 19 to 25, as the pictures were collected from a social media site. 
-<insert images>
+
+![alt img](https://github.com/yenholaivy/Asian-Age-and-Gender-Estimation/blob/main/img/dist_age_gender.png)
   
 ## Modeling
 ### Gender Detection
-Before I created the age estimator model, I wanted to start with something easier -- to build a gender detection model (see this notebook). I used sklearn DummyClassifier as my baseline, and got a 53% accuracy. Then, I built a CNN classifier with two convolutional layers and two fully-connected layers. I trained the model for 50 epochs and got a 93% accuracy with male precision 96% and female precision 89%.
-<insert image of the model>
-<epoch image>
+Before I created the age estimator model, I wanted to start with something easier -- to build a gender detection model (see this notebook). I used sklearn DummyClassifier as my baseline, and got a 53% accuracy. Then, I built a CNN classifier with two convolutional layers and two fully-connected layers. 
+
+![alt img](https://github.com/yenholaivy/Asian-Age-and-Gender-Estimation/blob/main/img/simple_cnn_struc.png)
+
+I trained the model for 50 epochs and got a 93% accuracy with male precision 96% and female precision 89%.
+
+![alt img](https://github.com/yenholaivy/Asian-Age-and-Gender-Estimation/blob/main/img/simple_cnn_gender.png)
+
 |  Model | Accurary | 
 | --- | --- |
 | DummyClassifier | 53% | 
 | Simple CNN | 93% | 
-<confusion matix>
 
-Here are some examples of a male being detected as a female, and vice versa.
-<insert image>
+![alt img](https://github.com/yenholaivy/Asian-Age-and-Gender-Estimation/blob/main/img/cm_gender.png)
   
+
 ### Age Estimation
 Next, I moved on to the age estimator model (see this notebook). My baseline is to always predict the average age 25.6 years, and it gives mean absolute error (MAE) of 5.2. My CNN model for age estimation has the same structure as the gender model, except the last layer has 'linear' as the activation function since this is a regression problem. I trained the model for 50 epochs and got a 4.1 MAE, which is 20% improvement from the baseline. 
 <epoch image>
