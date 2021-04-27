@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.metrics import mean_absolute_error, accuracy_score
 from sklearn.dummy import DummyClassifier
 from sklearn.model_selection import train_test_split
-from EDA import text_to_pd, dist_by_gender
+from eda import text_to_pd, dist_by_gender
 
 def gender_baseline_model(train, test):
     '''
